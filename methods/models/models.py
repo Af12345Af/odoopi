@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from datetime import date
+from datetime import date,datetime
 
 
 class Methods(models.Model):
@@ -18,3 +18,13 @@ class Methods(models.Model):
     def _validate_date(self):
         if self.number:
             self.test = date.today()
+
+    @api.onchange('user_id')
+    def _domain(self):
+        user = self.env['res.users'].search([('login_date', '<=', datetime.today())])
+        user_ids = []
+        for val in user:
+            user_ids.append(val.id)
+        print(user_ids)
+        # pass
+        return {'domain': {'user_id': [('id', 'in', user_ids), ]}}
