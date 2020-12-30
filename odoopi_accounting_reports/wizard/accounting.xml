@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="trail_accounting_view_form" model="ir.ui.view">
+            <field name="model">odoopi.account.balance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" string="From"/>
+                            </group>
+                            <group>
+                                <field name="date_to" string="TO"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="account_ids" string="Account(s)" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="print_trail_balance" string="Print Pdf" class="oe_highlight" type="object"/>
+                        <button name="print_trail_balance_excel" string="Print Excel" class="oe_highlight"
+                                type="object"/>
+                        <button string="Cancel" class="oe_right" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="trail_accounting_view_action" model="ir.actions.act_window">
+            <field name="name">Yearly Trial Balance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">odoopi.account.balance</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+                <menuitem id="trail_accounting_menu_action" parent="accounting_pdf_reports.menu_finance_legal_statement"
+                          action="trail_accounting_view_action" sequence="15"/>
+
+    </data>
+</odoo>

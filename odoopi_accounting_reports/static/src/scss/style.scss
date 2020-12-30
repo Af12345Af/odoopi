@@ -1,0 +1,184 @@
+.background-reports{
+    background: #dc841f;
+    color: white;
+    border-style: solid;
+}
+.background-reports-label{
+    background: #8a623b;
+    color: white;
+    justify-content: center;
+    border-style: solid;
+}
+.page-font-size{
+    font-size: 12px;
+}
+
+.footer-font-size{
+    font-size: 11px;
+}
+
+.limit-font-size{
+    font-size: 10px;
+}
+
+#hide_view {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+
+.MapsForm {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5px;
+    background: #8a623b;
+}
+
+.corner_title {
+  border: 2px;
+  padding: 10px;
+   color: white;
+  border-radius: 30px;
+  background-color: #54b196;
+//   background-image: linear-gradient(to  left, #23918c, #7bbf99); /* Standard syntax (must be last) */
+}
+.corner_value {
+  border: 2px;
+  padding: 10px;
+  color: #014a6f;
+  border-radius: 30px;
+  background-color: #e8f4f3;
+//   background-image: linear-gradient(to  left, #23918c, #7bbf99); /* Standard syntax (must be last) */
+}
+.column {
+  text-align: center;
+  width: 20%;
+  }
+ .column_1 {
+  text-align: center;
+  width: 16%;
+  }
+ .report_account {
+  text-align: center;
+  font-size: 10px;
+  width: 12%;
+  }
+.basic_info {
+  border: 2px;
+  color: white;
+  text-align: center;
+  border-radius: 0px 50px 0px 50px;
+  background-color: #ea9b6d;
+
+}
+.corner_basic_info_title {
+  border: 2px;
+   color: white;
+  border-radius: 30px;
+//   background: linear-gradient(to  left, #23918c, #7bbf99);
+  background-color: #014a6f;
+//   background-image: linear-gradient(to  left, #23918c, #7bbf99); /* Standard syntax (must be last) */
+}
+.basic_info_key {
+    color: #014a6f;
+}
+.basic_info_value {
+    color: #2f9a8f;
+}
+.basic_info_icon {
+    border-radius: 0px 5px 0px 5px;
+    width: 30px;
+    height: 15px;
+    background-color:#2f9a8f;
+}
+
+.basic_info_white_icon {
+    border-radius: 0px 5px 0px 5px;
+    width: 30px;
+    height: 15px;
+    background-color:#ffffff;
+}
+
+.white_icon {
+    border: 2px solid #2f9a8f;
+    border-radius: 0px 50px 0px 50px;
+    background-color:#ffffff;
+}
+
+.image_shape_1 {
+    border: 2px solid #2f9a8f;
+    padding: 2px;
+    border-radius: 0px 15px 0px 15px;
+    background-color:#ffffff;
+//     background-color:#ffffff;
+}
+
+.distance_info {
+  border: 1px;
+  color: white;
+  text-align: center;
+  border-radius: 0px 50px 0px 50px;
+  background-color: #54b196;
+
+}
+.header_client {
+  height: 100px;
+  width: 3px;
+  border: 1px;
+  background-color: #fd2f1e;
+}
+.dear_client {
+  height: 80px;
+  border: 1px solid #2f9a8f;
+  width: 15px;
+  background-color: #ffffff;
+}
+
+
+.border_barcode {
+    border: 2px solid #2f9a8f;
+    padding: 5px 5px 5px 5px;
+    color: #014a6f;
+    border-radius: 10px 10px 10px 10px;
+    background-color:#ffffff;
+}
+
+.bold_text {
+  font-weight: 900;
+}
+/**invoice class*/
+.invoice_top {
+  border: 1px;
+  padding: 15px;
+   color: #014a6f;
+  border-radius: 30px;
+  background-color: #e5ebef;
+//   background-image: linear-gradient(to  left, #23918c, #7bbf99); /* Standard syntax (must be last) */
+}
+.invoice_border {
+  border: 2px solid #e5ebef;
+  padding: 10px;
+   color: #014a6f;
+  border-radius: 30px;
+  background-color: white;
+//   background-image: linear-gradient(to  left, #23918c, #7bbf99); /* Standard syntax (must be last) */
+}
+.invoice_main {
+  border: 2px;
+  padding: 10px;
+   color: white;
+  border-radius: 30px;
+  background-color: #237e86;
+//   background-image: linear-gradient(to  left, #23918c, #7bbf99); /* Standard syntax (must be last) */
+}
+
+ .column_invoice {
+  text-align: center;
+  width: 11%;
+  }
+ .column_individual {
+  text-align: center;
+  width: 14%;
+  }

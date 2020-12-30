@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<odoo>
+    <data>
+        <template id="trail_balance_template_id">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="header">
+                    </div>
+                    <div class="page">
+
+                        <div class="row border mb-2">
+                            <div class="col-4"><center>Trial balance</center></div>
+                            <div class="col-8">
+                                From Period
+                                <span t-esc="period['date_from']" class="ml-4 mr-4"/>
+                                To
+                                <span t-esc="period['date_to']" class="ml-2 mr-2"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                                First Period
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                                Moves In Year
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                                Balance
+                            </div>
+                        </div>
+                        <div class="row border">
+                            <div class="report_account">Code</div>
+                            <div class="report_account">Account</div>
+                            <div class="report_account">
+                                Debit
+                            </div>
+                            <div class="report_account">
+                                Credit
+                            </div>
+                            <div class="report_account">
+                                Debit
+                            </div>
+                            <div class="report_account">
+                                Credit
+                            </div>
+                            <div class="report_account">
+                                Debit
+                            </div>
+                            <div class="report_account">
+                                Credit
+                            </div>
+                        </div>
+
+
+                        <t t-foreach="docs" t-as="account">
+                            <div class="row">
+                                <div class="report_account">
+                                    <span t-esc="account['code']"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['name']"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['debit_first']"
+                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['credit_first']"
+                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['debit_moves']"
+                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['credit_moves']"
+                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['debit_result']"
+                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                </div>
+                                <div class="report_account">
+                                    <span t-esc="account['credit_result']"
+                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                </div>
+                            </div>
+
+                        </t>
+
+                        <div class="row mt-2 border">
+                            <div class="report_account">Total</div>
+                            <div class="report_account"></div>
+                            <div class="report_account">
+                                <t t-esc="'{0:,.2f}'.format(totals['total_debit_first'])"/>
+                                <!--                            <span t-esc="totals['total_debit_first']"/>-->
+                            </div>
+                            <div class="report_account">
+                                <t t-esc="'{0:,.2f}'.format(totals['total_credit_first'])"/>
+                                <!--                            <span t-esc="totals['total_credit_first']"/>-->
+                            </div>
+                            <div class="report_account">
+                                <t t-esc="'{0:,.2f}'.format(totals['total_debit_first'])"/>
+                                <!--                            <span t-esc="totals['total_debit_first']"/>-->
+                            </div>
+                            <div class="report_account">
+                                <t t-esc="'{0:,.2f}'.format(totals['total_credit_moves'])"/>
+                                <!--                            <span t-esc="totals['total_credit_moves']"/>-->
+                            </div>
+                            <div class="report_account">
+                                <t t-esc="'{0:,.2f}'.format(totals['total_debit_result'])"/>
+                                <!--                            <span t-esc="totals['total_debit_result']"/>-->
+                            </div>
+                            <div class="report_account">
+                                <t t-esc="'{0:,.2f}'.format(totals['total_credit_result'])"/>
+                                <!--                            <span t-esc="totals['total_credit_result']"/>-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="trail_balance_accounting_define_report_id"
+                model="odoopi.account.balance"
+                report_type="qweb-pdf"
+                string="Accounting"
+                name="odoopi_accounting_reports.trail_balance_template_id"
+                file="odoopi_accounting_reports.trail_balance_template_id"
+                print_report_name="(''+str(time.time()))"
+                menu="False"
+        />
+
+        <report
+                id="accounting_xlsx"
+                model="odoopi.account.balance"
+                string="Accounting Balance"
+                report_type="xlsx"
+                name="odoopi_accounting_reports.accounting_xlsx"
+                file="odoopi_accounting_reports.accounting_xlsx"
+                print_report_name="(''+str(time.time()))"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <template id="report_assets_evaluation" name="Custom QWeb Style" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link href="/odoopi_accounting_reports/static/src/scss/style.scss" rel="stylesheet" type="text/scss"/>
+        </xpath>
+    </template>
+    <template id="assets_backend" name="Custom QWeb Style" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link href="/odoopi_accounting_reports/static/src/scss/style.scss" rel="stylesheet" type="text/scss"/>
+            <!--             <script src="/evaluation/static/src/js/dashboard.js" type="text/javascript"/> -->
+        </xpath>
+    </template>
+</odoo>
